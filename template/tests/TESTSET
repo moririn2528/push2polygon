@@ -1,0 +1,4 @@
+cxx_generator(src='generator.cpp', dependency=['testlib.h'])
+cxx_validator(src='validator.cpp', dependency=['testlib.h'])
+subtask_testset(name='Sample', score=0, input_patterns=['*sample*'])
+subtask_testset(name='All', score=300, input_patterns=['*'])
