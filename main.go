@@ -466,11 +466,6 @@ func upload(api *polygon.PolygonApi, problem_name, score_str string) error {
 				"\tregisterGen(argc, argv, 1);\n"+
 				"\t"+push_names[i]+"();\n"+
 				"}\n")
-			err = write_file("test/"+push_names[i]+".cpp", strings.Join(push_context, "\n"))
-			if err != nil {
-				log.Println(err)
-				return err
-			}
 
 			err = api.ProblemSaveFile(map[string]string{
 				"type": "source",
